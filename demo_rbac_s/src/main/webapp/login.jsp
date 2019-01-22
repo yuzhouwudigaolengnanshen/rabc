@@ -56,6 +56,7 @@
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
+
     </style>
 </head>
 
@@ -77,10 +78,10 @@
             <%--<p>您需要登录</p>--%>
         <%--</div>--%>
 
-        <c:if test="${error!=null}">
+        <c:if test="${param.error!=null}">
             <hr/>
             <div class="alert alert-warning" role="alert">
-                <h5 class="alert-heading">${error}</h5>
+                <h5 class="alert-heading">${param.error}</h5>
             </div>
         </c:if>
     </form>

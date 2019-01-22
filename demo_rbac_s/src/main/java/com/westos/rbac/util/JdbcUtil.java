@@ -25,7 +25,7 @@ public class JdbcUtil {
      */
     public static Connection getConnection() {
         try {
-            Connection conn = conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rabc?useSSL=false", "root", "01070511");
+            Connection conn = conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rabc?useSSL=false", "root", "666666");
             return conn;
         } catch (SQLException e) {
             System.out.println("获取连接失败" + e.getMessage());

@@ -1,7 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="javascript:void(0)">**用户名**</a>
+    <c:if test="${principal!= null} ">
+        <a class="navbar-brand" href="javascript:void(0)">${principal.username}</a>
+    </c:if>
+    <c:if test="${principal == null}">
+        <a class="navbar-brand" href="javascript:void(0)">请登录</a>
+    </c:if>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
