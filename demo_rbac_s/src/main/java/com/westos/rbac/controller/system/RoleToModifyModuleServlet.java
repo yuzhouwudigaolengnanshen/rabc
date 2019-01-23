@@ -26,9 +26,9 @@ public class RoleToModifyModuleServlet extends HttpServlet {
         //拿到了一个id
         String id = req.getParameter("id");
 
-        //查询所有角色
+        //获取所有的权限
         List<Module> allModules = moduleDao.findAll();
-        //
+        //某一角色的权限集合
         List<Module> roleModules = moduleDao.findByRoleId(Integer.parseInt(id));
 
         req.setAttribute("id",id);

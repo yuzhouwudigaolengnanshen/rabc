@@ -76,4 +76,30 @@ public class ModuleDaoImpl implements ModuleDao {
         }
     }
 
+    @Override
+    public void deleteByRoleId(int roleId) {
+        String sql = "delete from rbac_role_module where role_id = ?";
+        try (Connection conn = JdbcUtil.getConnection()) {
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setInt(1, roleId);
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void insertRoleModule(Integer roleId, Integer moduleId) {
+        String sql = "insert into rbac_role_module(role_id, module_id) values (?,?)";
+        try (Connection conn = JdbcUtil.getConnection()) {
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setInt(1, roleId);
+                stmt.setInt(2, moduleId);
+                stmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
