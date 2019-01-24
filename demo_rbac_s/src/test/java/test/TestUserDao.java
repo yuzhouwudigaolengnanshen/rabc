@@ -1,11 +1,11 @@
 package test;
 
-import com.westos.rbac.dao.ModuleDao;
-import com.westos.rbac.dao.UserDao;
-import com.westos.rbac.dao.impl.ModuleDaoImpl;
-import com.westos.rbac.dao.impl.UserDaoImpl;
-import com.westos.rbac.domain.Module;
-import com.westos.rbac.domain.User;
+import com.banban.rbac.dao.ModuleDao;
+import com.banban.rbac.dao.UserDao;
+import com.banban.rbac.dao.impl.ModuleDaoImpl;
+import com.banban.rbac.dao.impl.UserDaoImpl;
+import com.banban.rbac.domain.Module;
+import com.banban.rbac.domain.User;
 import org.junit.Test;
 
 import java.util.List;

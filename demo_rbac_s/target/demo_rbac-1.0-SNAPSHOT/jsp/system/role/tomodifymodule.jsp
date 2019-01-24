@@ -45,10 +45,10 @@
                 <c:forEach items="${allModules}" var="m1">
                     <div class="form-check">
                         <c:if test="${roleModules.contains(m1)}">
-                            <input type="checkbox" value="${m1.id}" name="moduleId" checked>
+                            <input type="hidden" value="${m1.id}" name="moduleId" checked>
                         </c:if>
                         <c:if test="${not roleModules.contains(m1)}">
-                            <input type="checkbox" value="${m1.id}" name="moduleId" >
+                            <input type="hidden" value="${m1.id}" name="moduleId" >
                         </c:if>
                         <a class="btn btn-info module" href="javascript:void(0)" role="button" data-check="true">${m1.name}</a>
                         <div></div>

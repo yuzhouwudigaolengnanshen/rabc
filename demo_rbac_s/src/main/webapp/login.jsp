@@ -58,6 +58,29 @@
         }
 
     </style>
+    <script>
+        function changeImage() {
+            document.getElementById("image1").src = "/captcha?t="+new Date().getTime();
+        }
+
+        function verify() {
+            var v = document.getElementById("yanzhengma").value;
+            <!-- 使用AJAX-->
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                //x 是结果 取值 true | false
+                var x = JSON.parse(xhr.responseText);
+                if(x) {
+                    document.getElementById("error").innerText="验证成功";
+                } else {
+                    document.getElementById("error").innerText="验证失败";
+                }
+            };
+            xhr.open("get","/checkCaptcha?captcha="+v,true);
+            xhr.send();
+        }
+
+    </script>
 </head>
 
 <body>
@@ -70,6 +93,17 @@
         <input type="text" name="username" id="inputUsername" class="form-control" placeholder="请输入用户名" required autofocus>
         <label for="inputPassword" class="sr-only">密码</label>
         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="密码" value="123" required>
+
+        <div class="form-row">
+            <div class="col-md-4">
+                <label for="yanzhengma">验证码</label>
+                <input type="text" id="yanzhengma" name="captcha" class="form-control is-invalid" placeholder="验证码" onkeyup="verify()">
+                <div id="error" class="valid-feedback"></div>
+            </div>
+            <div class="col-md-4">
+                <img src="/captcha" onclick="changeImage()" id="image1"/>
+            </div>
+        </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
 
         <%--<hr/>--%>
@@ -78,10 +112,10 @@
             <%--<p>您需要登录</p>--%>
         <%--</div>--%>
 
-        <c:if test="${param.error!=null}">
+        <c:if test="${error!=null}">
             <hr/>
             <div class="alert alert-warning" role="alert">
-                <h5 class="alert-heading">${param.error}</h5>
+                <h5 class="alert-heading">${error}</h5>
             </div>
         </c:if>
     </form>
