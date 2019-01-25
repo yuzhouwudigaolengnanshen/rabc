@@ -12,16 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * @author yihang
- */
+
 @WebServlet("/system/role/tomodifymodule")
 public class RoleToModifyModuleServlet extends HttpServlet {
     private ModuleDao moduleDao  = new ModuleDaoImpl();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // TODO 补充跳至修改角色的模块表单的代码
-        //拿到了一个id
+
+        //拿到了一个id 角色id roleid
         String id = req.getParameter("id");
 
         //获取所有的权限

@@ -13,17 +13,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author yihang
- */
+
 @WebServlet("/system/role/modifymodule")
 public class RoleModifyModuleServlet extends HttpServlet {
     private ModuleDao moduleDao = new ModuleDaoImpl();
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // TODO 补充修改角色的模块的代码
+
         String roleId = req.getParameter("roleId");
+        System.out.println("角色id为:"+roleId);
         String[] moduleIds = req.getParameterValues("moduleId");
+        for (String id : moduleIds) {
+            System.out.println("模块id为:"+id);
+        }
         //流 字符串数组转整数数组
         List<Integer> modules = Arrays.stream(moduleIds).map(s -> Integer.parseInt(s)).collect(Collectors.toList());
 

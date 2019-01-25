@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author yihang
- */
+
 @WebServlet("/order/refund")
 public class OrderRefundServlet extends HttpServlet {
     @Override

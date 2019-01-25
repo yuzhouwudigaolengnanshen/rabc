@@ -12,10 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * @author yihang
- */
-@WebServlet("/system/user/page")
+@WebServlet({"/system/user/page","/system/user"})
 public class UserPageServlet extends HttpServlet {
     private UserDao userDao = new UserDaoImpl();
 

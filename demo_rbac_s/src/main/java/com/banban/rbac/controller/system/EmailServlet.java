@@ -6,9 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author yihang
- */
 @WebServlet("/system/email")
 public class EmailServlet extends javax.servlet.http.HttpServlet {
 

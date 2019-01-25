@@ -16,28 +16,19 @@
       <li class="nav-item active">
         <a class="nav-link" href="/index">首页</a>
       </li>
-      
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">系统管理</a>
+      <c:forEach items="${allModules}" var="m1">
+        <c:if test="${principal.modules.contains(m1)}">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${m1.name}</a>
         <div class="dropdown-menu" aria-labelledby="dropdown1">
-          <a class="dropdown-item" href="/system/email">邮件设置</a>
-          <a class="dropdown-item" href="/system/sms">短信设置</a>
-          <a class="dropdown-item" href="/system/user/page">用户管理</a>
-          <a class="dropdown-item" href="/system/role/all">权限分配</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">订单管理</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown2">
-          <a class="dropdown-item" href="/order/search">查询订单</a>
-          <a class="dropdown-item" href="/order/refund">退单处理</a>
-          <a class="dropdown-item" href="/order/stat">统计分析</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="javascript:void(0)">商品管理</a>
-      </li>
+          <c:forEach items="${m1.children}" var="m2">
+            <c:if test="${principal.modules.contains(m2)}">
+              <a class="dropdown-item" href="${m2.code}">${m2.name}</a>
+            </c:if>
+          </c:forEach>
+          </c:if>
+      </c:forEach>
       <li class="nav-item">
         <form id="logout" action="/logout" method="post">
           <a class="nav-link" href="javascript:document.getElementById('logout').submit()">注销</a>

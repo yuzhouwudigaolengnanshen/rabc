@@ -71,13 +71,13 @@ public class LoginServlet extends HttpServlet {
 
         //实现动态菜单
         //查看当前用户所拥有得角色 以及角色含有得权限
-        System.out.println("用户名是：" + user.getUsername());
-        for (Role role : user.getRoles()) {
-            System.out.println("角色是：" + role.getName());
-            for (Module module : role.getModules()) {
-                System.out.println("\t权限是:" + module.getName());
-            }
-        }
+//        System.out.println("用户名是：" + user.getUsername());
+//        for (Role role : user.getRoles()) {
+//            System.out.println("角色是：" + role.getName());
+//            for (Module module : role.getModules()) {
+//                System.out.println("\t权限是:" + module.getName());
+//            }
+//        }
         // 所有权限信息
         List<Module> allModules = moduleDao.findAll();
         req.getSession().setAttribute("allModules", allModules);

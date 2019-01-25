@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author yihang
- */
+
 @WebServlet("/system/user/modifyrole")
 public class UserModifyRoleServlet extends HttpServlet {
     UserDaoImpl userDaoimpl = new UserDaoImpl();

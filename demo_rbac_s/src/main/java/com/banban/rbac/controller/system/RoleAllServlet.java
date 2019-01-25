@@ -12,10 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * @author yihang
- */
-@WebServlet("/system/role/all")
+
+@WebServlet({"/system/role/all","/system/role"})
 public class RoleAllServlet extends HttpServlet {
     RoleDao roleDao =  new RoleDaoImpl();
     @Override

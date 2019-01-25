@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author yihang
- */
+
 @WebServlet("/order/stat")
 public class OrderStatServlet extends HttpServlet {
     @Override

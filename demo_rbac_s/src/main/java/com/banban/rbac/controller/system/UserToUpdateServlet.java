@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author yihang
- */
+
 @WebServlet("/system/user/toupdate")
 public class UserToUpdateServlet extends HttpServlet {
     private UserDao userDao =  new UserDaoImpl();

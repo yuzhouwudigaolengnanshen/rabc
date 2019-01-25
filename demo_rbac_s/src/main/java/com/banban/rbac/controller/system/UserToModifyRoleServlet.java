@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * @author yihang
- */
+
 @WebServlet("/system/user/tomodifyrole")
 public class UserToModifyRoleServlet extends HttpServlet {
     private RoleDao roleDao = new RoleDaoImpl();

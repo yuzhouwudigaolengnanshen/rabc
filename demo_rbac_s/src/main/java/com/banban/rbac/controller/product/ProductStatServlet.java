@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author yihang
- */
 @WebServlet("/product/stat")
 public class ProductStatServlet extends HttpServlet {
     @Override

@@ -8,9 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-/**
- * @author yihang
- */
 @WebServlet("/system/sms")
 public class SmsServlet extends HttpServlet {
     @Override
